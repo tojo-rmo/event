@@ -4,56 +4,67 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>MACHI EVENT DROP｜街のイベント情報サイト</title>
-<meta name="description" content="街のアート・グルメ・マルシェ・カルチャーまで。気になるイベントを見つけよう。">
+<meta name="description" content="街のアート・グルメ・マルシェ・カルチャーまで。キーワードとカテゴリで、気になるイベントを検索できます。">
 
-<!-- 参考サイトと共通のフォント（Noto Sans JP / Inter） -->
+<!-- とうじょうRMOと共通のフォント（Noto Sans JP / Inter） -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ==================== HEADER ==================== -->
+  <!-- ==================== HEADER ====================
+       ロゴ＋検索バーのみのミニマムな構成（メニューは持たない）
+       ================================================================ -->
   <header class="site-header" id="hdr">
     <div class="wrap nav">
       <a href="./" class="logo">
-        <span id="siteName">MACHI EVENT DROP</span>
-        <small id="siteNameSub">for Your City</small>
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C8 7 5 11 5 14.5A7 7 0 0 0 19 14.5C19 11 16 7 12 2Z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span id="siteName">MACHI EVENT DROP</span>
+          <small id="siteNameSub">for Your City</small>
+        </span>
       </a>
-      <nav class="nav-links" id="navlinks">
-        <a href="#eventList">イベント一覧</a>
-        <a href="./" class="btn-nav">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 21V9l8-5 8 5v12M9 21v-6h6v6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          トップへ
-        </a>
-      </nav>
-      <button class="burger" id="burger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+
+      <form class="search-form" id="searchForm" role="search">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="キーワード・エリアで検索" aria-label="キーワード・エリアで検索" autocomplete="off" inputmode="search">
+        <button type="button" id="searchClear" class="search-clear" hidden aria-label="検索キーワードをクリア">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </form>
     </div>
   </header>
 
-  <!-- ==================== HERO ==================== -->
-  <section class="hero">
-    <div class="wrap hero-copy reveal">
-      <span class="badge">EVENT INFORMATION</span>
-      <h1 id="catchCopy">この街の“今”を紡ぐ、イベント情報サイト</h1>
-      <p class="lead" id="leadText">街のアート・グルメ・マルシェ・カルチャーまで。<br>気になるイベントを見つけて、街での時間をもっと楽しく。</p>
+  <!-- ==================== CATEGORY FILTER ====================
+       ヘッダー直下の帯として配置（参照サイトのフィルター行に準拠）
+       ================================================================ -->
+  <section class="filter-band">
+    <div class="wrap">
+      <nav class="category-filter" aria-label="カテゴリで絞り込み">
+        <div id="categoryFilter"><!-- JSで生成 --></div>
+      </nav>
     </div>
   </section>
 
-  <!-- ==================== CATEGORY FILTER / EVENT LIST ==================== -->
-  <section class="section filter-section" id="eventList">
+  <!-- ==================== EVENT LIST ==================== -->
+  <section class="section list-section" id="eventList">
     <div class="wrap">
-      <div class="acts-head reveal" style="text-align:left;margin-bottom:28px;">
-        <span class="eyebrow">Category</span>
-        <h2 class="sec-title">イベントを探す</h2>
+      <div class="list-head reveal">
+        <span class="eyebrow">Event Search</span>
+        <h1 class="sec-title" id="catchCopy">地域のイベントを探す</h1>
+        <p class="lead" id="leadText">気になるカテゴリやキーワードで、街のイベントをかんたんに検索できます。</p>
+        <p class="result-count" id="resultCount" aria-live="polite"></p>
       </div>
-      <nav class="category-filter" aria-label="カテゴリで絞り込み">
-        <div id="categoryFilter">
-          <!-- JSで生成 -->
-        </div>
-      </nav>
 
       <div id="statusMessage" class="status-message" hidden></div>
       <div class="event-grid reveal" id="eventGrid">
@@ -67,16 +78,11 @@
 
   <!-- ==================== FOOTER ==================== -->
   <footer>
-    <div class="wrap">
-      <div class="foot-top">
-        <div>
-          <div class="logo" id="footLogo">MACHI EVENT DROP</div>
-          <p id="footerLead">街のイベント情報を、シンプルにお届けします。</p>
-        </div>
-      </div>
-      <div class="foot-bot">
-        <p id="footerText">©MACHI EVENT DROP</p>
-      </div>
+    <div class="wrap foot-inner">
+      <div class="foot-logo" id="footLogo">MACHI EVENT DROP</div>
+      <p id="footerLead">街のイベント情報を、シンプルにお届けします。</p>
+      <div class="foot-divider" aria-hidden="true"></div>
+      <p class="foot-copy" id="footerText">©MACHI EVENT DROP</p>
     </div>
   </footer>
 
@@ -90,13 +96,15 @@
       <button type="button" class="modal-close" id="modalClose">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
       </button>
-      <div class="modal-thumb" id="modalThumb"></div>
-      <div class="modal-body">
-        <span class="modal-category" id="modalCategory"></span>
-        <h2 class="modal-title" id="modalTitle"></h2>
-        <p class="modal-address" id="modalAddress"></p>
-        <div class="modal-detail" id="modalDetail"></div>
-        <a href="#" class="card-link modal-link" id="modalLink" target="_blank" rel="noopener noreferrer"></a>
+      <div class="modal-scroll">
+        <div class="modal-thumb" id="modalThumb"></div>
+        <div class="modal-body">
+          <span class="tag-badge" id="modalCategory"></span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <p class="modal-address" id="modalAddress"></p>
+          <div class="modal-detail" id="modalDetail"></div>
+          <a href="#" class="btn modal-link" id="modalLink" target="_blank" rel="noopener noreferrer"></a>
+        </div>
       </div>
     </div>
   </div>
