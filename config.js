@@ -22,9 +22,10 @@ const SITE_CONFIG = {
   dataSource: "https://tojo-rmo.github.io/event/events.json",
 
   // ---- 画像関連 ---------------------------------------------------------
-  // サムネイル画像フォルダを絶対URL（サイトURL基準）で指定。
+  // サムネイル画像はサイト直下（event/ 直下）に配置されているため、
+  // 絶対URL（サイトURL）をそのまま基準にする。
   // JSONのthumbnailはファイル名のみでOK（例: "sample-art.jpg"）。
-  thumbnailBasePath: "https://tojo-rmo.github.io/event/images/thumbnails/",
+  thumbnailBasePath: "https://tojo-rmo.github.io/event/",
   thumbnailFallbackText: "NO IMAGE",       // 画像読み込み失敗時に表示するラベル
 
   // ---- カテゴリ表示色 -----------------------------------------------------
