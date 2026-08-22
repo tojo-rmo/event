@@ -116,7 +116,6 @@ a{color:inherit;text-decoration:none;}
   overflow:hidden;
 }
 .hero::before{
-  /* 参照元のヒーロー写真グラデーションに代わる、淡い装飾円 */
   content:"";position:absolute;top:-120px;right:-120px;width:360px;height:360px;
   border-radius:50%;background:radial-gradient(circle, rgba(47,122,67,.10), transparent 70%);
 }
@@ -147,9 +146,7 @@ a{color:inherit;text-decoration:none;}
 
 /* ---------- カテゴリフィルター（参照元の丸ピルタグに準拠） ---------- */
 .category-filter{margin-bottom:40px;}
-#categoryFilter{
-  display:flex;gap:10px;flex-wrap:wrap;
-}
+#categoryFilter{display:flex;gap:10px;flex-wrap:wrap;}
 .chip{
   flex:0 0 auto;
   padding:8px 20px;
@@ -165,36 +162,25 @@ a{color:inherit;text-decoration:none;}
   font-family:"Noto Sans JP",sans-serif;
 }
 .chip:hover{border-color:var(--green);color:var(--green);}
-.chip.active{
-  background:var(--green);
-  border-color:var(--green);
-  color:#fff;
-}
+.chip.active{background:var(--green);border-color:var(--green);color:#fff;}
 
 /* ---------- ステータスメッセージ ---------- */
 .status-message{
-  text-align:center;
-  padding:56px 16px;
-  color:var(--ink-soft);
-  font-size:.92rem;
-  background:var(--gray);
-  border-radius:var(--radius-lg);
+  text-align:center;padding:56px 16px;color:var(--ink-soft);font-size:.92rem;
+  background:var(--gray);border-radius:var(--radius-lg);
 }
 
 /* =========================================================
    イベントカード（参照元の .act / .menu-card トーンに準拠）
+   ・カード全体がクリック可能（詳細モーダルを開く）
    ========================================================= */
 .event-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
   gap:24px;
 }
-@media (max-width:960px){
-  .event-grid{grid-template-columns:repeat(2, 1fr);}
-}
-@media (max-width:640px){
-  .event-grid{grid-template-columns:1fr;gap:20px;}
-}
+@media (max-width:960px){ .event-grid{grid-template-columns:repeat(2, 1fr);} }
+@media (max-width:640px){ .event-grid{grid-template-columns:1fr;gap:20px;} }
 
 .event-card{
   background:var(--white);
@@ -203,23 +189,14 @@ a{color:inherit;text-decoration:none;}
   overflow:hidden;
   display:flex;
   flex-direction:column;
+  cursor:pointer;
   transition:transform .4s var(--ease), box-shadow .4s var(--ease);
 }
-.event-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 24px 50px -34px rgba(0,0,0,.4);
-}
+.event-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -34px rgba(0,0,0,.4);}
+.event-card:focus-visible{outline:3px solid var(--green);outline-offset:2px;}
 
-.thumb-wrap{
-  position:relative;
-  aspect-ratio:4/3;
-  background:var(--gray);
-  overflow:hidden;
-}
-.thumb-wrap img{
-  width:100%;height:100%;object-fit:cover;display:block;
-  transition:transform .5s var(--ease);
-}
+.thumb-wrap{position:relative;aspect-ratio:4/3;background:var(--gray);overflow:hidden;}
+.thumb-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease);}
 .event-card:hover .thumb-wrap img{transform:scale(1.06);}
 
 .thumb-placeholder{
@@ -234,54 +211,29 @@ a{color:inherit;text-decoration:none;}
 
 .category-badge{
   position:absolute;top:12px;left:12px;
-  padding:5px 14px;
-  border-radius:30px;
-  font-size:.7rem;
-  font-weight:600;
-  letter-spacing:.03em;
-  color:var(--green-deep);
-  background:rgba(255,255,255,.92);
-  border:1px solid currentColor;
-  box-shadow:0 4px 10px rgba(0,0,0,.06);
+  padding:5px 14px;border-radius:30px;font-size:.7rem;font-weight:600;letter-spacing:.03em;
+  color:var(--green-deep);background:rgba(255,255,255,.92);
+  border:1px solid currentColor;box-shadow:0 4px 10px rgba(0,0,0,.06);
 }
 
-.card-body{
-  padding:20px 20px 22px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  flex:1;
-}
-.card-title{
-  font-size:1.02rem;
-  font-weight:700;
-  color:var(--ink);
-  line-height:1.6;
-  margin:0;
-}
-.card-address{
-  display:flex;
-  align-items:flex-start;
-  gap:6px;
-  font-size:.84rem;
-  color:var(--ink-soft);
-  margin:0;
-  line-height:1.6;
-}
+.card-body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1;}
+.card-title{font-size:1.02rem;font-weight:700;color:var(--ink);line-height:1.6;margin:0;}
+.card-address{display:flex;align-items:flex-start;gap:6px;font-size:.84rem;color:var(--ink-soft);margin:0;line-height:1.6;}
 .card-address .pin{flex:0 0 auto;margin-top:2px;}
 
-.card-link{
+/* 「くわしく見る」ヒント（カード全体がクリック可能であることの案内） */
+.card-hint{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.82rem;font-weight:600;color:var(--green);
   margin-top:auto;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  padding:11px 16px;
-  border-radius:var(--radius-sm);
-  background:var(--green);
-  color:#fff;
-  font-size:.85rem;
-  font-weight:600;
+}
+.card-hint svg{width:13px;height:13px;transition:transform .3s var(--ease);}
+.event-card:hover .card-hint svg{transform:translateX(4px);}
+
+.card-link{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  padding:11px 16px;border-radius:var(--radius-sm);
+  background:var(--green);color:#fff;font-size:.85rem;font-weight:600;
   transition:background .3s, transform .3s var(--ease);
 }
 .card-link:hover{background:var(--green-deep);transform:translateY(-2px);}
@@ -306,6 +258,80 @@ footer{background:var(--footer-bg);color:rgba(255,255,255,.6);padding:48px 0 26p
 .foot-top p{font-size:.82rem;font-weight:400;margin-top:12px;max-width:340px;color:rgba(255,255,255,.55);line-height:1.9;}
 .foot-bot{padding-top:22px;border-top:1px solid rgba(255,255,255,.12);}
 .foot-bot p{font-size:.74rem;font-weight:400;color:rgba(255,255,255,.4);}
+
+/* =========================================================
+   イベント詳細モーダル
+   ・events.json の "detail" 列（HTML）を .modal-detail に描画
+   ・見出し/箇条書きなどのトーンは下層ページ(.article)と統一
+   ========================================================= */
+.modal-overlay{
+  position:fixed;inset:0;z-index:300;
+  background:rgba(20,26,18,.6);
+  display:flex;align-items:center;justify-content:center;
+  padding:24px;
+  opacity:0;visibility:hidden;
+  transition:opacity .3s var(--ease), visibility .3s;
+}
+.modal-overlay.open{opacity:1;visibility:visible;}
+
+.modal-box{
+  position:relative;
+  background:var(--white);
+  border-radius:18px;
+  width:100%;
+  max-width:660px;
+  max-height:86vh;
+  overflow-y:auto;
+  box-shadow:0 40px 80px -30px rgba(0,0,0,.5);
+  transform:translateY(18px) scale(.98);
+  transition:transform .35s var(--ease);
+}
+.modal-overlay.open .modal-box{transform:translateY(0) scale(1);}
+
+.modal-close{
+  position:absolute;top:14px;right:14px;z-index:2;
+  width:36px;height:36px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(255,255,255,.92);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  transition:background .25s, color .25s, transform .25s var(--ease);
+}
+.modal-close:hover{background:var(--green);color:#fff;transform:rotate(90deg);}
+
+.modal-thumb{position:relative;aspect-ratio:16/9;background:var(--gray);overflow:hidden;}
+.modal-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+
+.modal-body{padding:28px 32px 36px;}
+
+.modal-category{
+  display:inline-block;
+  padding:5px 14px;border-radius:30px;font-size:.72rem;font-weight:600;letter-spacing:.03em;
+  background:var(--white);border:1px solid currentColor;color:var(--green-deep);
+  margin-bottom:14px;
+}
+.modal-title{font-size:clamp(1.2rem,2.6vw,1.5rem);font-weight:700;color:var(--ink);line-height:1.6;margin-bottom:12px;}
+.modal-address{display:flex;align-items:flex-start;gap:6px;font-size:.88rem;color:var(--ink-soft);margin-bottom:24px;}
+.modal-address .pin{flex:0 0 auto;margin-top:2px;}
+
+/* ---- detail(HTML)の中身のトーン：下層ページ .article と統一 ---- */
+.modal-detail{color:var(--ink-soft);font-size:.94rem;line-height:1.95;margin-bottom:28px;}
+.modal-detail p{margin-bottom:16px;}
+.modal-detail p:last-child{margin-bottom:0;}
+.modal-detail h2,.modal-detail h3{
+  font-weight:700;color:var(--ink);margin:24px 0 12px;
+}
+.modal-detail h2:first-child,.modal-detail h3:first-child{margin-top:0;}
+.modal-detail h2{font-size:1.1rem;padding-bottom:8px;border-bottom:2px solid var(--gray2);}
+.modal-detail h3{font-size:1rem;color:var(--green-deep);}
+.modal-detail ul,.modal-detail ol{margin:0 0 18px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:9px;}
+.modal-detail ul li{position:relative;padding-left:20px;}
+.modal-detail ul li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--green);}
+.modal-detail ol{padding-left:20px;list-style:decimal;}
+.modal-detail b,.modal-detail strong{color:var(--ink);font-weight:700;}
+.modal-detail a{color:var(--green);text-decoration:underline;text-underline-offset:3px;}
+.modal-detail img{border-radius:10px;margin:16px 0;}
+
+.modal-link{width:100%;}
 
 /* =========================================================
    reveal（スクロールでふわっと表示）
@@ -341,6 +367,8 @@ footer{background:var(--footer-bg);color:rgba(255,255,255,.6);padding:48px 0 26p
   .filter-section{padding-top:48px;}
   .hero{padding:76px 0 56px;}
   .foot-top{flex-direction:column;}
+
+  .modal-body{padding:24px 22px 28px;}
 }
 
 @media(max-width:520px){
@@ -349,16 +377,15 @@ footer{background:var(--footer-bg);color:rgba(255,255,255,.6);padding:48px 0 26p
   .logo small{font-size:.54rem;}
   .hero-copy h1{font-size:clamp(1.4rem,6.2vw,1.9rem);}
   .hero-copy .badge{font-size:.68rem;padding:6px 14px;}
-  #categoryFilter{
-    flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
-  }
+  #categoryFilter{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;}
   #categoryFilter::-webkit-scrollbar{display:none;}
+
+  .modal-overlay{padding:0;}
+  .modal-box{max-width:none;max-height:100vh;max-height:100dvh;height:100%;border-radius:0;}
 }
 
 /* =========================================================
    ワイドスクリーン対応
-   参照元同様、コンテナは max-width で頭打ちにし、
-   超ワイドモニターでもカードが間延びしないようにしています。
    ========================================================= */
 @media(min-width:1400px){
   .event-grid{gap:28px;}

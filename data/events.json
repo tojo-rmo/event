@@ -5,7 +5,8 @@
     "thumbnail": "sample-art.jpg",
     "category": "アート・デザイン",
     "address": "大阪府大阪市北区中之島公園周辺",
-    "url": "https://example.com/events/art-festival"
+    "url": "https://example.com/events/art-festival",
+    "detail": "<p>川沿いの遊歩道と公園一帯を舞台に、国内外のアーティストによる立体作品・光のインスタレーションを展示する野外アートフェスティバルです。</p><h3>見どころ</h3><ul><li>夜間は作品がライトアップされ、昼間とは異なる表情に</li><li>会場内には飲食ブースも多数出店</li><li>子ども向けのワークショップも同時開催</li></ul><p><b>開催期間：</b>2026年9月19日（土）〜9月27日（日）<br><b>開催時間：</b>10:00〜21:00（最終入場20:30）</p>"
   },
   {
     "id": "evt-002",
@@ -13,7 +14,8 @@
     "thumbnail": "sample-jazz.jpg",
     "category": "音楽・カルチャー",
     "address": "大阪府大阪市中央区北浜1丁目",
-    "url": "https://example.com/events/night-jazz"
+    "url": "https://example.com/events/night-jazz",
+    "detail": "<p>川沿いのオープンテラスで楽しむ、大人のためのナイトジャズライブ。夕暮れから夜へと移りゆく景色とともに、生演奏をお楽しみいただけます。</p><h3>出演</h3><ul><li>Riverside Jazz Trio</li><li>Guest Vocal：Yuki Amano</li></ul><p>ドリンク片手にゆったりとお楽しみください。雨天時は屋内会場に変更となります。</p>"
   },
   {
     "id": "evt-003",
@@ -21,7 +23,8 @@
     "thumbnail": "sample-market.jpg",
     "category": "マルシェ・マーケット",
     "address": "大阪府大阪市北区中之島1丁目 芝生広場",
-    "url": "https://example.com/events/organic-market"
+    "url": "https://example.com/events/organic-market",
+    "detail": "<p>近郊の農家が丹精込めて育てたオーガニック野菜・果物や、無添加の加工食品が並ぶマルシェです。</p><h3>出店内容（一例）</h3><ul><li>朝採れ野菜・果物</li><li>自家製ジャム・ピクルス</li><li>クラフトパン・焼き菓子</li><li>コーヒースタンド</li></ul><p>会場では、生産者との交流イベントも予定しています。雨天決行。</p>"
   },
   {
     "id": "evt-004",
@@ -29,7 +32,8 @@
     "thumbnail": "sample-history.jpg",
     "category": "歴史・まち歩き",
     "address": "大阪府大阪市中央区船場中央周辺",
-    "url": "https://example.com/events/retro-building-tour"
+    "url": "https://example.com/events/retro-building-tour",
+    "detail": "<p>大阪・船場エリアに残るレトロ建築と、老舗の技を巡るまち歩きツアーです。専門ガイドの解説とともに、普段は入れない場所も特別に見学します。</p><h3>コース</h3><ul><li>近代建築の外観・内観見学</li><li>老舗店舗での職人技見学</li><li>休憩スポットでの一服（お茶菓子付き）</li></ul><p><b>所要時間：</b>約2時間30分／<b>定員：</b>20名（要事前予約）</p>"
   },
   {
     "id": "evt-005",
@@ -37,7 +41,8 @@
     "thumbnail": "sample-gourmet.jpg",
     "category": "グルメ・お酒",
     "address": "大阪府大阪市北区堂島浜1丁目",
-    "url": "https://example.com/events/twilight-terrace"
+    "url": "https://example.com/events/twilight-terrace",
+    "detail": "<p>ホテル最上階のラウンジテラスを期間限定で開放。フリーフローのドリンクと軽食とともに、夕暮れから夜景までを贅沢に楽しめます。</p><p><b>営業時間：</b>17:00〜23:00（L.O. 22:30）<br><b>料金：</b>お一人様 ¥4,800〜（フリーフロー90分制）</p><p>予約優先。当日は空席がある場合のみウォークインも可能です。</p>"
   },
   {
     "id": "evt-006",
@@ -45,7 +50,8 @@
     "thumbnail": "sample-cruise.jpg",
     "category": "クルーズ・自然体験",
     "address": "大阪府大阪市北区中之島 ローズポート船着場",
-    "url": "https://example.com/events/night-cruise"
+    "url": "https://example.com/events/night-cruise",
+    "detail": "<p>ライトアップされた橋やビル群を、川面から眺める夜のクルーズ体験。ガイドによる解説付きで、大阪の水都文化の歴史にも触れられます。</p><h3>クルーズ概要</h3><ul><li>所要時間：約60分</li><li>乗船場所：ローズポート船着場</li><li>1日3便運航（19:00 / 20:00 / 21:00）</li></ul><p>雨天時は屋根付きデッキをご利用いただけます。</p>"
   },
   {
     "id": "evt-007",
@@ -53,7 +59,8 @@
     "thumbnail": "sample-yoga.jpg",
     "category": "アクティビティ・健康",
     "address": "大阪府大阪市中央区北浜2丁目 リバーテラス",
-    "url": "https://example.com/events/morning-yoga"
+    "url": "https://example.com/events/morning-yoga",
+    "detail": "<p>出勤前のひととき、川沿いのテラスで心と身体をゆるめる朝ヨガレッスンです。初心者の方にも丁寧に指導いたします。</p><p><b>開催曜日：</b>毎週水曜・金曜　7:00〜7:45<br><b>持ち物：</b>ヨガマット（レンタルあり／¥300）、飲み物</p><p>雨天中止。中止の場合は前日18時までに公式サイトでお知らせします。</p>"
   },
   {
     "id": "evt-008",
@@ -61,6 +68,7 @@
     "thumbnail": "sample-talk.jpg",
     "category": "アート・デザイン",
     "address": "大阪府大阪市北区中之島4丁目",
-    "url": "https://example.com/events/art-talk"
+    "url": "https://example.com/events/art-talk",
+    "detail": "<p>現在開催中の企画展に関連し、出展作家本人によるギャラリートーク＆質疑応答セッションを開催します。</p><h3>プログラム</h3><ul><li>19:00 – 開場</li><li>19:30 – 作家によるギャラリートーク</li><li>20:15 – 質疑応答</li><li>20:45 – 終了</li></ul><p>参加無料・要事前申込（先着50名）。当日の企画展入場券が必要です。</p>"
   }
 ]

@@ -42,7 +42,7 @@
     </div>
   </section>
 
-  <!-- ==================== CATEGORY FILTER ==================== -->
+  <!-- ==================== CATEGORY FILTER / EVENT LIST ==================== -->
   <section class="section filter-section" id="eventList">
     <div class="wrap">
       <div class="acts-head reveal" style="text-align:left;margin-bottom:28px;">
@@ -55,10 +55,9 @@
         </div>
       </nav>
 
-      <!-- ==================== EVENT LIST ==================== -->
       <div id="statusMessage" class="status-message" hidden></div>
       <div class="event-grid reveal" id="eventGrid">
-        <!-- JSで生成 -->
+        <!-- JSで生成（カードをクリックすると詳細モーダルを表示） -->
       </div>
       <div class="load-more-wrap" id="loadMoreWrap" hidden>
         <button type="button" id="loadMoreBtn" class="btn load-more-btn"></button>
@@ -80,6 +79,27 @@
       </div>
     </div>
   </footer>
+
+  <!-- ==================== EVENT DETAIL MODAL ====================
+       ・イベントカードをクリックすると表示される詳細ビュー
+       ・#modalDetail の中身は events.json の "detail" 列をそのまま
+         HTMLとして描画します（意図的にエスケープしていません）
+       ================================================================ -->
+  <div class="modal-overlay" id="modalOverlay" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle" id="modalBox">
+      <button type="button" class="modal-close" id="modalClose">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal-thumb" id="modalThumb"></div>
+      <div class="modal-body">
+        <span class="modal-category" id="modalCategory"></span>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-address" id="modalAddress"></p>
+        <div class="modal-detail" id="modalDetail"></div>
+        <a href="#" class="card-link modal-link" id="modalLink" target="_blank" rel="noopener noreferrer"></a>
+      </div>
+    </div>
+  </div>
 
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
