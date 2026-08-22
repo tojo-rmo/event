@@ -300,20 +300,67 @@
     card.setAttribute("aria-haspopup", "dialog");
     card.setAttribute("aria-label", (event.title || "") + " の詳細を見る");
 
-    // --- サムネイル ---
+    // --- サムネイル（画像のみ。バッジ等はオーバーレイしない） ---
     const thumbWrap = document.createElement("div");
     thumbWrap.className = "thumb-wrap";
     const categoryColor = buildThumb(event, thumbWrap);
 
+    // --- 本文 ---
+    const body = document.createElement("div");
+    body.className = "card-body";
+
+    // カテゴリ（色ドット＋名称。タイトル上に控えめに配置）
     if (event.category) {
-      thumbWrap.appendChild(buildTagBadge(event, categoryColor));
+      const cat = document.createElement("span");
+      cat.className = "card-category";
+      const dot = document.createElement("i");
+      dot.className = "dot";
+      dot.style.background = categoryColor;
+      cat.appendChild(dot);
+      cat.appendChild(document.createTextNode(event.category));
+      body.appendChild(cat);
     }
 
-    // --- お気に入りボタン ---
+    // タイトル
+    const title = document.createElement("h3");
+    title.className = "card-title";
+    title.textContent = event.title || "(タイトル未設定)";
+    body.appendChild(title);
+
+    // 下部メタ行：左＝エリア（住所）／右＝アクションアイコン列
+    const meta = document.createElement("div");
+    meta.className = "card-meta";
+
+    const address = document.createElement("span");
+    address.className = "card-address";
+    if (event.address) {
+      address.innerHTML =
+        '<span class="pin" aria-hidden="true">' + pinIcon() + "</span>" +
+        '<span class="addr-txt">' + escapeHtml(event.address) + "</span>";
+    }
+    meta.appendChild(address);
+
+    const actions = document.createElement("span");
+    actions.className = "card-actions";
+
+    // 公式サイト（外部リンク）
+    if (event.url) {
+      const ext = document.createElement("a");
+      ext.className = "icon-btn";
+      ext.href = event.url;
+      ext.target = "_blank";
+      ext.rel = "noopener noreferrer";
+      ext.setAttribute("aria-label", cfg.externalLinkLabel || "公式サイトを開く（新しいタブ）");
+      ext.innerHTML = externalIcon("currentColor");
+      ext.addEventListener("click", (e) => e.stopPropagation());
+      actions.appendChild(ext);
+    }
+
+    // お気に入り
     const isFav = favorites.has(event.id);
     const favBtn = document.createElement("button");
     favBtn.type = "button";
-    favBtn.className = "fav-btn" + (isFav ? " active" : "");
+    favBtn.className = "icon-btn fav" + (isFav ? " active" : "");
     favBtn.setAttribute("aria-pressed", String(isFav));
     favBtn.setAttribute("aria-label", isFav
       ? (cfg.favoriteRemoveLabel || "お気に入りから削除")
@@ -329,49 +376,13 @@
         ? (cfg.favoriteRemoveLabel || "お気に入りから削除")
         : (cfg.favoriteAddLabel || "お気に入りに追加"));
       favBtn.innerHTML = heartIcon(nowFav);
-      // お気に入りチップの件数を更新（表示中がお気に入り絞り込みなら再描画）
+      // お気に入りチップの件数を更新（お気に入り絞り込み表示中なら再描画）
       renderCategoryFilter();
       if (currentCategory === FAVORITES_KEY) render();
     });
-    thumbWrap.appendChild(favBtn);
+    actions.appendChild(favBtn);
 
-    // --- 本文 ---
-    const body = document.createElement("div");
-    body.className = "card-body";
-
-    const title = document.createElement("h2");
-    title.className = "card-title";
-    title.innerHTML =
-      '<span class="title-txt">' + escapeHtml(event.title || "(タイトル未設定)") + "</span>" +
-      '<span class="title-arrow" aria-hidden="true">' + arrowIcon() + "</span>";
-    body.appendChild(title);
-
-    const meta = document.createElement("div");
-    meta.className = "card-meta";
-
-    if (event.address) {
-      const address = document.createElement("span");
-      address.className = "card-address";
-      address.innerHTML =
-        '<span class="pin" aria-hidden="true">' + pinIcon() + "</span><span>" +
-        escapeHtml(event.address) + "</span>";
-      meta.appendChild(address);
-    } else {
-      meta.appendChild(document.createElement("span"));
-    }
-
-    if (event.url) {
-      const ext = document.createElement("a");
-      ext.className = "card-external";
-      ext.href = event.url;
-      ext.target = "_blank";
-      ext.rel = "noopener noreferrer";
-      ext.setAttribute("aria-label", cfg.externalLinkLabel || "公式サイトを開く（新しいタブ）");
-      ext.innerHTML = externalIcon("currentColor");
-      ext.addEventListener("click", (e) => e.stopPropagation());
-      meta.appendChild(ext);
-    }
-
+    meta.appendChild(actions);
     body.appendChild(meta);
 
     card.appendChild(thumbWrap);
@@ -463,10 +474,6 @@
       '<path d="M21 3l-9 9" stroke="' + c + '" stroke-width="2" stroke-linecap="round"/>' +
       '<path d="M19 14v5a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h5" stroke="' + c + '" stroke-width="2" stroke-linecap="round"/>' +
       "</svg>";
-  }
-  function arrowIcon() {
-    return '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-      '<path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   }
   function heartIcon(filled) {
     return '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
