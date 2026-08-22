@@ -67,3 +67,8 @@ const SITE_CONFIG = {
   detailFallbackText: "詳細情報は準備中です。", // detailが未設定の場合に表示する文言
   modalCloseLabel: "閉じる",             // モーダル閉じるボタンのaria-label
 };
+
+// main.js は window.SITE_CONFIG を参照します。
+// 通常の<script>では const 宣言は window に載らないため、明示的に公開します。
+// （この1行が無いと設定が反映されず、画像パス等がすべて既定値になります）
+window.SITE_CONFIG = SITE_CONFIG;
