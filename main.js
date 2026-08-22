@@ -120,7 +120,7 @@
 
   // ---- データ取得 ----
   async function loadEvents() {
-    const src = cfg.dataSource || "events.json";
+    const src = cfg.dataSource || "https://tojo-rmo.github.io/event/events.json";
     try {
       const res = await fetch(src, { cache: "no-store" });
       if (!res.ok) throw new Error("HTTP " + res.status);

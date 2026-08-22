@@ -18,10 +18,13 @@ const SITE_CONFIG = {
 
   // ---- データソース -----------------------------------------------------
   // ここだけ差し替えれば掲載イベントが切り替わる「CMS代わりのJSON」
-  dataSource: "events.json",
+  // 絶対URL（サイトURL基準）で指定。どの階層から読んでも同じJSONを参照します。
+  dataSource: "https://tojo-rmo.github.io/event/events.json",
 
   // ---- 画像関連 ---------------------------------------------------------
-  thumbnailBasePath: "images/thumbnails/", // JSONのthumbnailは相対パス/ファイル名のみでOK
+  // サムネイル画像フォルダを絶対URL（サイトURL基準）で指定。
+  // JSONのthumbnailはファイル名のみでOK（例: "sample-art.jpg"）。
+  thumbnailBasePath: "https://tojo-rmo.github.io/event/images/thumbnails/",
   thumbnailFallbackText: "NO IMAGE",       // 画像読み込み失敗時に表示するラベル
 
   // ---- カテゴリ表示色 -----------------------------------------------------
