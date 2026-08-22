@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>MACHI EVENT DROP｜街のイベント情報サイト</title>
+<meta name="description" content="街のアート・グルメ・マルシェ・カルチャーまで。気になるイベントを見つけよう。">
+
+<!-- 参考サイトと共通のフォント（Noto Sans JP / Inter） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header" id="hdr">
+    <div class="wrap nav">
+      <a href="./" class="logo">
+        <span id="siteName">MACHI EVENT DROP</span>
+        <small id="siteNameSub">for Your City</small>
+      </a>
+      <nav class="nav-links" id="navlinks">
+        <a href="#eventList">イベント一覧</a>
+        <a href="./" class="btn-nav">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 21V9l8-5 8 5v12M9 21v-6h6v6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          トップへ
+        </a>
+      </nav>
+      <button class="burger" id="burger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="wrap hero-copy reveal">
+      <span class="badge">EVENT INFORMATION</span>
+      <h1 id="catchCopy">この街の“今”を紡ぐ、イベント情報サイト</h1>
+      <p class="lead" id="leadText">街のアート・グルメ・マルシェ・カルチャーまで。<br>気になるイベントを見つけて、街での時間をもっと楽しく。</p>
+    </div>
+  </section>
+
+  <!-- ==================== CATEGORY FILTER ==================== -->
+  <section class="section filter-section" id="eventList">
+    <div class="wrap">
+      <div class="acts-head reveal" style="text-align:left;margin-bottom:28px;">
+        <span class="eyebrow">Category</span>
+        <h2 class="sec-title">イベントを探す</h2>
+      </div>
+      <nav class="category-filter" aria-label="カテゴリで絞り込み">
+        <div id="categoryFilter">
+          <!-- JSで生成 -->
+        </div>
+      </nav>
+
+      <!-- ==================== EVENT LIST ==================== -->
+      <div id="statusMessage" class="status-message" hidden></div>
+      <div class="event-grid reveal" id="eventGrid">
+        <!-- JSで生成 -->
+      </div>
+      <div class="load-more-wrap" id="loadMoreWrap" hidden>
+        <button type="button" id="loadMoreBtn" class="btn load-more-btn"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div>
+          <div class="logo" id="footLogo">MACHI EVENT DROP</div>
+          <p id="footerLead">街のイベント情報を、シンプルにお届けします。</p>
+        </div>
+      </div>
+      <div class="foot-bot">
+        <p id="footerText">©MACHI EVENT DROP</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

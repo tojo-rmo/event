@@ -1,0 +1,66 @@
+[
+  {
+    "id": "evt-001",
+    "title": "リバーサイド・アートフェスティバル 2026",
+    "thumbnail": "sample-art.jpg",
+    "category": "アート・デザイン",
+    "address": "大阪府大阪市北区中之島公園周辺",
+    "url": "https://example.com/events/art-festival"
+  },
+  {
+    "id": "evt-002",
+    "title": "水辺のナイトジャズライブ ～Sunset Session～",
+    "thumbnail": "sample-jazz.jpg",
+    "category": "音楽・カルチャー",
+    "address": "大阪府大阪市中央区北浜1丁目",
+    "url": "https://example.com/events/night-jazz"
+  },
+  {
+    "id": "evt-003",
+    "title": "オーガニックマルシェ in 中之島公園",
+    "thumbnail": "sample-market.jpg",
+    "category": "マルシェ・マーケット",
+    "address": "大阪府大阪市北区中之島1丁目 芝生広場",
+    "url": "https://example.com/events/organic-market"
+  },
+  {
+    "id": "evt-004",
+    "title": "老舗の技を訪ねる 船場レトロ建築めぐり",
+    "thumbnail": "sample-history.jpg",
+    "category": "歴史・まち歩き",
+    "address": "大阪府大阪市中央区船場中央周辺",
+    "url": "https://example.com/events/retro-building-tour"
+  },
+  {
+    "id": "evt-005",
+    "title": "ホテルラウンジのトワイライトテラス",
+    "thumbnail": "sample-gourmet.jpg",
+    "category": "グルメ・お酒",
+    "address": "大阪府大阪市北区堂島浜1丁目",
+    "url": "https://example.com/events/twilight-terrace"
+  },
+  {
+    "id": "evt-006",
+    "title": "水都大阪ナイトクルーズ 2026",
+    "thumbnail": "sample-cruise.jpg",
+    "category": "クルーズ・自然体験",
+    "address": "大阪府大阪市北区中之島 ローズポート船着場",
+    "url": "https://example.com/events/night-cruise"
+  },
+  {
+    "id": "evt-007",
+    "title": "朝ヨガ ～川風とともに、心と身体をゆるめる～",
+    "thumbnail": "sample-yoga.jpg",
+    "category": "アクティビティ・健康",
+    "address": "大阪府大阪市中央区北浜2丁目 リバーテラス",
+    "url": "https://example.com/events/morning-yoga"
+  },
+  {
+    "id": "evt-008",
+    "title": "現代アートの実験室 ～企画展 特別トークイベント～",
+    "thumbnail": "sample-talk.jpg",
+    "category": "アート・デザイン",
+    "address": "大阪府大阪市北区中之島4丁目",
+    "url": "https://example.com/events/art-talk"
+  }
+]
