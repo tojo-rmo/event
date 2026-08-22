@@ -3,18 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>とうじょうRMO EVENT｜地域イベント情報サイト</title>
-<meta name="description" content="グルメ・農業・キッズ・体験・カルチャーまで。キーワードとカテゴリで、気になるイベントを検索できます。">
-
+<title>MACHI EVENT DROP｜街のイベント情報サイト</title>
+<meta name="description" content="街のアート・グルメ・マルシェ・カルチャーまで。キーワードとカテゴリで、気になるイベントを検索できます。">
 <!-- とうじょうRMOと共通のフォント（Noto Sans JP / Inter） -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <!-- ==================== HEADER ====================
        ロゴ＋検索バーのみのミニマムな構成（メニューは持たない）
        ================================================================ -->
@@ -27,11 +24,10 @@
           </svg>
         </span>
         <span class="logo-text">
-          <span id="siteName">とうじょうRMO EVENT</span>
-          <small id="siteNameSub">for Your TOWN</small>
+          <span id="siteName">MACHI EVENT DROP</span>
+          <small id="siteNameSub">for Your City</small>
         </span>
       </a>
-
       <form class="search-form" id="searchForm" role="search">
         <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
@@ -62,14 +58,16 @@
       <div class="list-head reveal">
         <span class="eyebrow">Event Search</span>
         <h1 class="sec-title" id="catchCopy">地域のイベントを探す</h1>
-        <p class="lead" id="leadText">気になるカテゴリやキーワードで、イベントをかんたんに検索できます。</p>
+        <p class="lead" id="leadText">気になるカテゴリやキーワードで、街のイベントをかんたんに検索できます。</p>
         <p class="result-count" id="resultCount" aria-live="polite"></p>
       </div>
 
       <div id="statusMessage" class="status-message" hidden></div>
+
       <div class="event-grid" id="eventGrid">
         <!-- JSで生成（カードをクリックすると詳細モーダルを表示） -->
       </div>
+
       <div class="load-more-wrap" id="loadMoreWrap" hidden>
         <button type="button" id="loadMoreBtn" class="btn load-more-btn"></button>
       </div>
@@ -79,9 +77,10 @@
   <!-- ==================== FOOTER ==================== -->
   <footer>
     <div class="wrap foot-inner">
-      <div class="foot-logo" id="footLogo">とうじょうRMO EVENT</div>
+      <div class="foot-logo" id="footLogo">MACHI EVENT DROP</div>
+      <p id="footerLead">街のイベント情報を、シンプルにお届けします。</p>
       <div class="foot-divider" aria-hidden="true"></div>
-      <p class="foot-copy" id="footerText">©とうじょうRMO</p>
+      <p class="foot-copy" id="footerText">©MACHI EVENT DROP</p>
     </div>
   </footer>
 
@@ -108,7 +107,7 @@
     </div>
   </div>
 
-  <script src="js/config.js"></script>
-  <script src="js/main.js"></script>
+  <script src="config.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
