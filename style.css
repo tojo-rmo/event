@@ -93,12 +93,15 @@ input{font-family:inherit;}
   width:30px;height:30px;border-radius:8px;background:var(--green);
 }
 .logo-mark svg{width:15px;height:15px;}
+/* 修正後 */
+.logo-text{display:flex;flex-direction:column;line-height:1.2;} /* ← white-space:nowrap; を削除 */
 .logo-text span {
-  font-family: "Inter", sans-serif; /* セリフ体からサンセリフ体へ変更 */
+  font-family: "Inter", sans-serif; 
   font-weight: 600;
   letter-spacing: 0.1em;
-  font-size: 1.7rem;       /* Interは少し大きく見えるため調整 */
+  font-size: 1.7rem;       
   color: var(--ink);
+  white-space: pre-wrap; /* ← これを追加（\n で改行できるようになります） */
 }
 .logo-text small{
   font-family:"Inter",sans-serif;font-weight:600;
