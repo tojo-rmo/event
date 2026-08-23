@@ -12,7 +12,6 @@ const SITE_CONFIG = {
   siteName: "とうじょうRMO",             // ヘッダー・フッターのロゴに表示
   siteNameSub: "Event in your TOWN",     // ロゴ下のサブタイトル
   catchCopy: "地域のイベントを探す",       // 一覧セクションの見出し（h1）
-  leadText: "気になるカテゴリやキーワードで、地域のイベントをかんたんに検索できます。",
   footerText: "©とうじょうRMO",
   footerLead: "農業・体験・グルメ・カルチャーまで。加東市のイベント情報を東条地域からお届けします。",
 
