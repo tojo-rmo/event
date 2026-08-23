@@ -93,10 +93,12 @@ input{font-family:inherit;}
   width:30px;height:30px;border-radius:8px;background:var(--green);
 }
 .logo-mark svg{width:15px;height:15px;}
-.logo-text{display:flex;flex-direction:column;line-height:1.2;white-space:nowrap;}
-.logo-text span{
-  font-family:"Cormorant Garamond",serif;
-  font-weight:700;letter-spacing:.08em;font-size:1.8rem;color:var(--ink);
+.logo-text span {
+  font-family: "Inter", sans-serif; /* セリフ体からサンセリフ体へ変更 */
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 1.7rem;       /* Interは少し大きく見えるため調整 */
+  color: var(--ink);
 }
 .logo-text small{
   font-family:"Inter",sans-serif;font-weight:600;
