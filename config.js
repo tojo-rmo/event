@@ -23,6 +23,7 @@ const SITE_CONFIG = {
           <p>岡本・森・南山の3地区が協力し、農地を守り、地域資源を活かし、暮らしを支える農村型地域運営組織です。</p>
         </div>
         <div class="foot-nav">
+          <span class="foot-nav-title">LINKS</span>
           <a href="https://sites.google.com/view/okamotoeinou/" target="_blank" rel="noopener">とうじょうＲＭＯ</a>
           <a href="https://sites.google.com/view/okamotoeinou/" target="_blank" rel="noopener">㈱岡本営農互助会</a>
           <a href="https://www.welovetojo.com/" target="_blank" rel="noopener">We Love シン東条</a>
