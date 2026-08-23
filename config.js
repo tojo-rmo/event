@@ -9,11 +9,30 @@
 
 const SITE_CONFIG = {
   // ---- サイト基本情報 -------------------------------------------------
-  siteName: "とうじょうRMO",             // ヘッダー・フッターのロゴに表示
+  siteName: "とうじょう縁側",             // ヘッダーのロゴ／ページタイトルに表示
   siteNameSub: "Event in your TOWN",     // ロゴ下のサブタイトル
   catchCopy: "地域のイベントを探す",       // 一覧セクションの見出し（h1）
-  footerText: "©とうじょうRMO",
-  footerLead: "農業・体験・グルメ・カルチャーまで。加東市のイベント情報を東条地域からお届けします。",
+  leadText: "気になるカテゴリやキーワードで、地域のイベントをかんたんに検索できます。",
+  // ---- フッター -----------------------------------------------------------
+  // フッターの中身（<footer id="siteFooter"> の内側）をHTMLとして描画します。
+  // リンクや文言の変更は、このHTMLを編集するだけでOKです。
+  footerHtml: `
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <div class="logo">とうじょうRMO<small>兵庫県加東市 東条地域</small></div>
+          <p>岡本・森・南山の3地区が協力し、農地を守り、地域資源を活かし、暮らしを支える農村型地域運営組織です。</p>
+        </div>
+        <div class="foot-nav">
+          <a href="https://sites.google.com/view/okamotoeinou/" target="_blank" rel="noopener">とうじょうＲＭＯ</a>
+          <a href="https://sites.google.com/view/okamotoeinou/" target="_blank" rel="noopener">㈱岡本営農互助会</a>
+          <a href="https://www.welovetojo.com/" target="_blank" rel="noopener">We Love シン東条</a>
+          <a href="https://www.city.kato.lg.jp/" target="_blank" rel="noopener">加東市役所</a>
+        </div>
+      </div>
+      <div class="foot-bot"><p>© 2026 とうじょうRMO ｜ 兵庫県加東市東条地域</p></div>
+    </div>
+  `,
 
   // ---- データソース -----------------------------------------------------
   // ここだけ差し替えれば掲載イベントが切り替わる「CMS代わりのJSON」

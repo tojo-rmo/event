@@ -25,9 +25,7 @@
     catchCopy: document.getElementById("catchCopy"),
     leadText: document.getElementById("leadText"),
     resultCount: document.getElementById("resultCount"),
-    footerText: document.getElementById("footerText"),
-    footLogo: document.getElementById("footLogo"),
-    footerLead: document.getElementById("footerLead"),
+    siteFooter: document.getElementById("siteFooter"),
     categoryFilter: document.getElementById("categoryFilter"),
     eventGrid: document.getElementById("eventGrid"),
     statusMessage: document.getElementById("statusMessage"),
@@ -60,9 +58,7 @@
     if (cfg.siteNameSub) els.siteNameSub.textContent = cfg.siteNameSub;
     if (cfg.catchCopy) els.catchCopy.textContent = cfg.catchCopy;
     if (cfg.leadText) els.leadText.textContent = cfg.leadText;
-    if (cfg.footerText) els.footerText.textContent = cfg.footerText;
-    if (cfg.siteName && els.footLogo) els.footLogo.textContent = cfg.siteName;
-    if (cfg.footerLead && els.footerLead) els.footerLead.textContent = cfg.footerLead;
+    if (cfg.footerHtml && els.siteFooter) els.siteFooter.innerHTML = cfg.footerHtml;
     if (cfg.loadMoreLabel) els.loadMoreBtn.textContent = cfg.loadMoreLabel;
     if (cfg.modalCloseLabel) els.modalClose.setAttribute("aria-label", cfg.modalCloseLabel);
     if (cfg.searchPlaceholder) {

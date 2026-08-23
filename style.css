@@ -274,13 +274,42 @@ input{font-family:inherit;}
 
 /* =========================================================
    フッター（とうじょうRMOと同じダークグリーン基調）
+   ・上段：ブランド紹介（左）＋ 関連リンク（右）
+   ・下段：コピーライト
    ========================================================= */
-footer{background:var(--footer-bg);color:rgba(255,255,255,.55);padding:56px 0 32px;}
-.foot-inner{text-align:center;}
-.foot-logo{font-weight:700;font-size:1.06rem;letter-spacing:.02em;color:#fff;}
-.foot-inner p{font-size:.83rem;margin-top:10px;color:rgba(255,255,255,.55);}
-.foot-divider{width:36px;height:1px;background:rgba(255,255,255,.2);margin:24px auto;}
-.foot-copy{font-size:.72rem !important;color:rgba(255,255,255,.38) !important;margin-top:0 !important;}
+footer{background:var(--footer-bg);color:rgba(255,255,255,.55);padding:64px 0 32px;}
+.foot-top{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:48px;
+  padding-bottom:32px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+/* ---- 左：ブランド紹介 ---- */
+.foot-brand{max-width:520px;}
+.foot-brand .logo{
+  display:flex;flex-direction:column;line-height:1.3;
+  font-weight:700;font-size:1.12rem;letter-spacing:.02em;color:#fff;
+}
+.foot-brand .logo small{
+  font-family:"Inter",sans-serif;font-weight:500;
+  font-size:.72rem;letter-spacing:.04em;color:rgba(255,255,255,.5);margin-top:4px;
+}
+.foot-brand p{font-size:.84rem;line-height:1.9;margin-top:16px;color:rgba(255,255,255,.6);}
+/* ---- 右：関連リンク ---- */
+.foot-nav{display:flex;flex-direction:column;gap:12px;flex:0 0 auto;text-align:right;}
+.foot-nav a{
+  font-size:.85rem;font-weight:500;color:rgba(255,255,255,.72);
+  transition:color .2s;
+}
+.foot-nav a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px;}
+/* ---- 下段：コピーライト ---- */
+.foot-bot{text-align:center;padding-top:28px;}
+.foot-bot p{font-size:.72rem;color:rgba(255,255,255,.4);}
+
+@media(max-width:720px){
+  footer{padding:48px 0 28px;}
+  .foot-top{flex-direction:column;gap:28px;}
+  .foot-nav{text-align:left;}
+}
 
 /* =========================================================
    イベント詳細モーダル

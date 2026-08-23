@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>とうじょうRMO｜地域のイベント情報サイト</title>
+<title>とうじょう縁側｜地域のイベント情報サイト</title>
 <meta name="description" content="農業・体験・グルメ・カルチャーまで。加東市のイベント情報を東条地域からお届けします！">
 <!-- とうじょうRMOと共通のフォント（Noto Sans JP / Inter） -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,15 +72,10 @@
     </div>
   </section>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer>
-    <div class="wrap foot-inner">
-      <!-- footLogo（siteName）/ footerText は config.js から反映されます -->
-      <div class="foot-logo" id="footLogo"></div>
-      <div class="foot-divider" aria-hidden="true"></div>
-      <p class="foot-copy" id="footerText"></p>
-    </div>
-  </footer>
+  <!-- ==================== FOOTER ====================
+       中身（.wrap 以下）は config.js の footerHtml から反映されます
+       ================================================================ -->
+  <footer id="siteFooter"></footer>
 
   <!-- ==================== EVENT DETAIL MODAL ====================
        ・イベントカードをクリックすると表示される詳細ビュー
