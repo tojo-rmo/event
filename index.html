@@ -18,29 +18,10 @@
   <header class="site-header" id="hdr">
     <div class="wrap nav">
       <a href="./" class="logo">
-        <span class="logo-mark" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- 茎の部分 -->
-            <path d="M6 22Q6 10 15 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
-  
-            <!-- 頂点の粒 -->
-            <path d="M15 2C17 2 18 4 17 5C16 6 14 5 15 2Z" fill="#fff"/>
-  
-            <!-- 右側の粒 -->
-            <path d="M16 6C18.5 6 19 8 18 9C17 10 15 9 16 6Z" fill="#fff"/>
-            <path d="M14 11C16.5 11 17 13 16 14C15 15 13 14 14 11Z" fill="#fff"/>
-            <path d="M12 16C14.5 16 15 18 14 19C13 20 11 19 12 16Z" fill="#fff"/>
-  
-            <!-- 左側の粒 -->
-            <path d="M13 5C13 2.5 11 2 10 3C9 4 10 6 13 5Z" fill="#fff"/>
-            <path d="M11 10C11 7.5 9 7 8 8C7 9 8 11 11 10Z" fill="#fff"/>
-            <path d="M9 15C9 12.5 7 12 6 13C5 14 6 16 9 15Z" fill="#fff"/>
-          </svg>
-
-        </span>
         <span class="logo-text">
-          <span id="siteName">とうじょうRMO</span>
-          <small id="siteNameSub">ENJOY OUR TOWN</small>
+          <!-- siteName / siteNameSub は config.js（SITE_CONFIG）から反映されます -->
+          <span id="siteName"></span>
+          <small id="siteNameSub"></small>
         </span>
       </a>
       <form class="search-form" id="searchForm" role="search">
@@ -48,8 +29,9 @@
           <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
           <path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <input type="text" id="searchInput" class="search-input" placeholder="キーワード・エリアで検索" aria-label="キーワード・エリアで検索" autocomplete="off" inputmode="search">
-        <button type="button" id="searchClear" class="search-clear" hidden aria-label="検索キーワードをクリア">
+        <!-- placeholder / aria-label は config.js（searchPlaceholder / searchClearLabel）から反映されます -->
+        <input type="text" id="searchInput" class="search-input" autocomplete="off" inputmode="search">
+        <button type="button" id="searchClear" class="search-clear" hidden>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
         </button>
       </form>
@@ -72,8 +54,9 @@
     <div class="wrap">
       <div class="list-head reveal">
         <span class="eyebrow">Event Search</span>
-        <h1 class="sec-title" id="catchCopy">地域のイベントを探す</h1>
-        <p class="lead" id="leadText">気になるカテゴリやキーワードで、地域のイベントをかんたんに検索できます。</p>
+        <!-- catchCopy / leadText は config.js から反映されます -->
+        <h1 class="sec-title" id="catchCopy"></h1>
+        <p class="lead" id="leadText"></p>
         <p class="result-count" id="resultCount" aria-live="polite"></p>
       </div>
 
@@ -92,9 +75,10 @@
   <!-- ==================== FOOTER ==================== -->
   <footer>
     <div class="wrap foot-inner">
-      <div class="foot-logo" id="footLogo">とうじょうRMO</div>
+      <!-- footLogo（siteName）/ footerText は config.js から反映されます -->
+      <div class="foot-logo" id="footLogo"></div>
       <div class="foot-divider" aria-hidden="true"></div>
-      <p class="foot-copy" id="footerText">©とうじょうRMO</p>
+      <p class="foot-copy" id="footerText"></p>
     </div>
   </footer>
 

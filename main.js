@@ -279,12 +279,10 @@
   }
 
   function buildTagBadge(event, categoryColor) {
+    // カテゴリは文字色で分類（色ドットは使用しない）
     const badge = document.createElement("span");
     badge.className = "tag-badge";
-    const dot = document.createElement("i");
-    dot.className = "tag-dot";
-    dot.style.background = categoryColor;
-    badge.appendChild(dot);
+    badge.style.color = categoryColor;
     const label = document.createElement("span");
     label.textContent = event.category;
     badge.appendChild(label);
@@ -308,15 +306,12 @@
     const body = document.createElement("div");
     body.className = "card-body";
 
-    // カテゴリ（色ドット＋名称。タイトル上に控えめに配置）
+    // カテゴリ（文字色で分類。色ドットは使用しない）
     if (event.category) {
       const cat = document.createElement("span");
       cat.className = "card-category";
-      const dot = document.createElement("i");
-      dot.className = "dot";
-      dot.style.background = categoryColor;
-      cat.appendChild(dot);
-      cat.appendChild(document.createTextNode(event.category));
+      cat.style.color = categoryColor;
+      cat.textContent = event.category;
       body.appendChild(cat);
     }
 
