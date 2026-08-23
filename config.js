@@ -9,8 +9,8 @@
 
 const SITE_CONFIG = {
   // ---- サイト基本情報 -------------------------------------------------
-  siteName: "ENGAWA TOJO",               // ヘッダーのロゴ／ページタイトルに表示
-  siteNameSub: "EVENTS in our Town",     // ロゴ下のサブタイトル
+  siteName: "meet TOJO",               // ヘッダーのロゴ／ページタイトルに表示
+  siteNameSub: "Connect with Our Town",     // ロゴ下のサブタイトル
   catchCopy: "地域のイベントを探す",       // 一覧セクションの見出し（h1）
   // ---- フッター -----------------------------------------------------------
   // フッターの中身（<footer id="siteFooter"> の内側）をHTMLとして描画します。
