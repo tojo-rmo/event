@@ -190,22 +190,27 @@ input{font-family:inherit;}
    ========================================================= */
 .event-grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  /* 1fr は内部的に minmax(auto,1fr) となり、サムネイル画像の実寸で
+     カラム幅が広がってしまう（＝1枚だけ大きくなり正方形に見えない）。
+     minmax(0,1fr) で各カラムを確実に等分にする。 */
+  grid-template-columns:repeat(3, minmax(0, 1fr));
   gap:40px 30px;
 }
-@media (max-width:960px){ .event-grid{grid-template-columns:repeat(2, 1fr);gap:34px 24px;} }
-@media (max-width:600px){ .event-grid{grid-template-columns:1fr;gap:30px;} }
+@media (max-width:960px){ .event-grid{grid-template-columns:repeat(2, minmax(0, 1fr));gap:34px 24px;} }
+@media (max-width:600px){ .event-grid{grid-template-columns:minmax(0, 1fr);gap:30px;} }
 
 .event-card{
   background:transparent;
   cursor:pointer;
   display:flex;flex-direction:column;
+  min-width:0; /* 画像の実寸でカラムが広がらないようにする（サムネイル正方形化の保険） */
 }
 .event-card:focus-visible{outline:none;}
 .event-card:focus-visible .thumb-wrap{outline:2px solid var(--green);outline-offset:3px;}
 
 .thumb-wrap{
   position:relative;aspect-ratio:1/1;background:var(--gray);overflow:hidden;
+  min-width:0;       /* 画像の実寸でカラムが広がらないようにする（保険） */
   border-radius:0;   /* サムネイルの角は直角 */
   transition:box-shadow .35s var(--ease);
 }
